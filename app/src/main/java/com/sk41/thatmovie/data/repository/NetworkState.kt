@@ -1,9 +1,10 @@
 package com.sk41.thatmovie.data.repository
 
 enum class Status {
+
     RUNNING,
     SUCCESS,
-    FAIL
+    FAILED
 }
 
 class NetworkState(val status: Status, val msg: String) {
@@ -19,8 +20,8 @@ class NetworkState(val status: Status, val msg: String) {
 
         LOADED = NetworkState(Status.SUCCESS, "Success")
 
-        LOADING = NetworkState(Status.RUNNING, "Running")
+        LOADING = NetworkState(Status.RUNNING, "running")
 
-        ERROR = NetworkState(Status.FAIL, "Something went wrong")
+        ERROR = NetworkState(Status.FAILED, "Something went wrong")
     }
 }
